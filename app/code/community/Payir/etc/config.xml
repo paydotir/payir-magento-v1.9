@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * @category   Payir
+ * @package    Payir
+ * @copyright  Copyright (c) 2017 Pay.ir (https://pay.ir/)
+ */
+-->
+<config>
+	<modules>
+		<Payir>
+			<version>1.0.0</version>
+		</Payir>
+	</modules>
+
+    <global>
+        <models>
+            <payir>
+                <class>Payir_Model</class>
+            </payir>
+        </models>
+
+        <helpers>
+            <payir>
+                <class>Payir_Helper</class>
+            </payir>
+        </helpers>
+
+        <resources>
+            <payir_setup>
+                <setup>
+                    <module>Payir</module>
+                </setup>
+
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </payir_setup>		
+	
+            <payir_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </payir_write>	
+	
+            <payir_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </payir_read>
+        </resources>
+
+        <blocks>
+            <payir>
+				<class>Payir_Block</class>
+			</payir>
+        </blocks>
+    </global>
+
+    <frontend>
+        <secure_url>
+            <payir_redirect>/payir/redirect</payir_redirect>
+        </secure_url>	
+
+        <routers>
+            <payir>
+                <use>standard</use>
+                <args>
+                    <module>Payir</module>
+                    <frontName>payir</frontName>
+                </args>
+            </payir>
+        </routers>	
+	
+        <translate>
+            <modules>
+                <Payir>
+                    <files>
+                        <default>Payir.csv</default>
+                    </files>
+                </Payir>
+            </modules>
+        </translate>	
+
+        <layout>
+            <updates>
+                <payir>
+                    <file>payir.xml</file>
+                </payir>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Payir>
+                    <files>
+                        <default>Payir.csv</default>
+                    </files>
+                </Payir>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <payment>
+            <payir>
+                <active>0</active>
+                <model>payir/payir</model>
+				<order_status>1</order_status>
+                <second_order_status>3</second_order_status>
+                <allowspecific>0</allowspecific>
+                <title>Pay.ir Online Payment</title>
+				<gateway>0</gateway>
+				<payer_Id>0</payer_Id>
+				<pgwpay_url>0</pgwpay_url>
+            </payir>
+        </payment>
+    </default>
+	
+</config>

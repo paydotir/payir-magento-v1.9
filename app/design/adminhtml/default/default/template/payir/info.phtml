@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Magento
+ *
+ * @category   Payir
+ * @package    Payir
+ * @copyright  Copyright (c) 2017 Pay.ir (https://pay.ir/)
+ */
+
+echo $this->getMethod()->getTitle() . '<br/>';
+
+if ($this->getInfo()->getLastTransId() == '') {
+	echo $this->__('Payment has not been processed yet.') . '<br/>';
+}
+else {
+	echo $this->__('Pay.ir Transaction ID: %s', $this->htmlEscape($this->getInfo()->getLastTransId())) . '<br/>';
+}

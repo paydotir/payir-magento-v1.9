@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Magento
+ *
+ * @category   Payir
+ * @package    Payir
+ * @copyright  Copyright (c) 2017 Pay.ir (https://pay.ir/)
+ */
+?>
+
+<fieldset class="form-list">
+    <?php $_code = $this->getMethodCode() ?>
+    <ul id="payment_form_<?php echo $_code ?>" style="display:none">
+        <li>
+            <?php echo $this->__('You will be redirected to Pay.ir website when you place an order.') ?><br />
+        </li>
+        <div style="padding:10px 15px 15px;">
+          <img src="<?php echo $this->getPaymentImageSrc(); ?>" alt="<?php echo $this->__('Pay.ir payment methods') ?>" />
+        </div>
+    </ul>
+</fieldset>

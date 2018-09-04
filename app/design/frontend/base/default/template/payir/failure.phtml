@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Magento
+ *
+ * @category   Payir
+ * @package    Payir
+ * @copyright  Copyright (c) 2017 Pay.ir (https://pay.ir/)
+ */
+?>
+
+<html>
+<meta http-equiv="refresh" content="0; URL=<?php echo $this->getContinueShoppingUrl() ?>">
+<body>
+<div class="page-head">
+    <h3><?php echo $this->__('Error occured') ?></h3>
+</div>
+<p><?php echo $this->__('Please <a href="%s">continue shopping</a>.', $this->getContinueShoppingUrl()) ?></p>
+</body>
+</html>

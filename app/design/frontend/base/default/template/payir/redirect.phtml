@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Magento
+ *
+ * @category   Payir
+ * @package    Payir
+ * @copyright  Copyright (c) 2017 Pay.ir (https://pay.ir/)
+ */
+?>
+
+<center>
+    <p><?php echo $this->__('Please wait! You will be redirected to Pay.ir') ?></p>
+</center>
+<form id="payir" action="<?php echo $this->getFormAction(); ?>" method="POST">
+<?php if (is_array($this->getFormData())) : ?>
+    <?php foreach ($this->getFormData() as $name => $value) : ?>
+        <input type="hidden" name="<?php echo $name; ?>" value="<?php echo $value; ?>"/>
+    <?php endforeach; ?>
+<?php endif; ?>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+    var paymentform = document.getElementById('payir');
+    window.onload = paymentform.submit();
+//]]>
+</script>
